@@ -80,6 +80,6 @@ public class Application2 {
         *  아무것도 참조하지 않고 null 이라는 특수한 값을 참조하고 있는 경우 참조연산자를 사용하게 될 때 발생하는 에러이다.
         * */
 
-        System.out.println(darr.length);
+//        System.out.println(darr.length); // darr의 주소 값이 null로 인해 사라져 에러가 발생하는거로 추측.
     }
 }
