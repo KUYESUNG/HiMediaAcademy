@@ -9,7 +9,7 @@ public class Car {
     Animal a2 = new Wolf();
     Animal a3 = new Tiger();
 
-    public void go() {
+    public void go() {      // 차가 앞으로 움직였을때.
         System.out.println("차가 앞으로 움직입니다.");
         this.meter += 1;
         System.out.println("차가 1km 앞으로 이동 했습니다.");
@@ -30,7 +30,7 @@ public class Car {
         }
     }
 
-    public void back() {
+    public void back() {        // 차가 뒤로 움직였을때
         System.out.println("차가 뒤로 움직입니다.");
         this.meter -= 1;
         System.out.println("차가 1km 뒤로 이동 했습니다.");
@@ -46,5 +46,5 @@ public class Car {
 
     public void stay() {
         System.out.println("이동을 멈추었습니다.");
-    }
+    }       // 차를 멈추었을때.
 }

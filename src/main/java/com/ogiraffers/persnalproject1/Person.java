@@ -10,7 +10,7 @@ public class Person {
     Animal a2 = new Wolf();
     Animal a3 = new Tiger();
 
-    public void feed() {
+    public void feed() {            // 사람의 먹이주는 행동.
         System.out.println("동물에게 먹이를 주시겠습니까?");
         System.out.println(" 1. 네 | 2. 아니요 ");
         int selectFeed = sc.nextInt();
@@ -23,7 +23,7 @@ public class Person {
         }
     }
 
-    public void Direction() {
+    public void Direction() {       // 사람의 방향성 선택.
         System.out.println("움직일 방향을 정하시오.");
         System.out.println(" 1. 앞 | 2. 뒤 ");
         int selectDirection = sc.nextInt();

@@ -2,7 +2,7 @@ package com.ogiraffers.persnalproject1;
 
 public class Bear extends Animal {
     @Override
-    public void eat() {
+    public void eat() {     // 곰의 먹이에대한 반응.
         if (random == 1){
             System.out.println("곰이 먹이를 받아 먹습니다.");
         } else {
@@ -11,7 +11,7 @@ public class Bear extends Animal {
     }
 
     @Override
-    public void scream() {
+    public void scream() {      // 곰의 포효.
         System.out.println("그르르르...");
     }
 }
