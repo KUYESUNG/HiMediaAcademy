@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Person {
 
     Scanner sc = new Scanner(System.in);
-    Animal animal = new Animal();
-    Animal a1 = new Bear();
-    Animal a2 = new Wolf();
-    Animal a3 = new Tiger();
+
+    public void throwFood(Car car) {
+        car.receiveFood(); // Car에 알림
+    }
 
     public void feed() {            // 사람의 먹이주는 행동.
         System.out.println("동물에게 먹이를 주시겠습니까?");
@@ -46,4 +46,5 @@ public class Person {
         System.out.println(" 1. 네 | 2. 아니요 ");
         int selectDropping = sc.nextInt();
     }
+
 }

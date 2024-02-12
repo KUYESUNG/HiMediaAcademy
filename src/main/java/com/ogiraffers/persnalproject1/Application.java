@@ -45,6 +45,7 @@ public class Application {
             System.out.println("3. 후진");
             System.out.println("4. 머무르기");
             System.out.println("5. 하차하기");
+            System.out.println("6. 동물에게 먹이 던지기");
             System.out.println("9. 프로그램 종료");
             System.out.print("메뉴 선택 : ");
             int num = sc.nextInt();
@@ -54,9 +55,9 @@ public class Application {
                 case 2 : car.go(); break;
                 case 3 : car.back(); break;
                 case 4 : car.stay();
-                         person.feed();
                          break;
                 case 5 : person.getOut(); break;
+                case 6 : person.throwFood(car); break;
                 default : System.out.println("선택지에 없는 번호 입니다. 다시 입력하세요.");
             }
 
