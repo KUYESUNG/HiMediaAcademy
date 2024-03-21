@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.company {
+    display: flex;
+    justify-content: center;
+}
+
+.companyLogo {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.companyImg {
+    height: relative;
+    max-width: 100%;
+}
+
+.aboutWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.aboutContainer {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.div {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    padding: 0 0 var(--pading-10xl);
+    box-sizing: border-box;
+    letter-spacing: normal;
+}
+
+.p {
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+}
+
+.a {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.b {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.c,
+.d,
+.e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.functionImformation {
+
+    height: 271px;
+    width: 1160px;
+    position: relative;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-black);
+    display: none
+}
+
+.functionImformationParent {
+    align-self: stretch;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-black);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 65px 40px;
+    gap: 53.5px;
+    min-height: 271px;
+    max-width: 100%;
+    font-size: var(--font-size-mini);
+}
+
+.wrapper {
+    flex: 1;
+    display: felx;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-12xs) 0 0;
+    box-sizing: border-box;
+    min-width: 241px;
+    max-width: 100%;
+}
+
+.div1 {
+    align-self: stretch;
+    height: 120px;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.blankline5,
+.blankline
+.p5 {
+    margin: 0;
+}
+
+.p6 {
+    font-size: var(--font-size-smi);
+}
