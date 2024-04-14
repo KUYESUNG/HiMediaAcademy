@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.practice.product.ProductMapper">
+    <resultMap id="productResultMap" type="com.ohgiraffers.practice.product.ProductDTO">
+        <id property="id" column="ID"/>
+        <result property="model" column="MODEL"/>
+        <result property="ram" column="RAM"/>
+        <result property="ssd" column="SSD"/>
+        <result property="brand" column="brand"/>
+        <result property="date" column="PRODUCT_DATE"/>
+    </resultMap>
+    <resultMap id="rentalResultMap" type="com.ohgiraffers.practice.rental.RentalDTO">
+        <id property="id" column="ID"/>
+        <result property="price" column="PRICE"/>
+        <result property="rental" column="RENTAL"/>
+    </resultMap>
+    <resultMap id="all" type="com.ohgiraffers.practice.ProductAndRentalDTO">
+        <collection property="productList" resultMap="productResultMap"/>
+        <collection property="rentalList" resultMap="rentalResultMap"/>
+    </resultMap>
+    
+
+    <select id="showAll" resultMap="all">
+        SELECT
+                A. ID
+              , A. MODEL
+              , A. RAM
+              , A. SSD
+              , A. BRAND
+              , A. PRODUCT_DATE
+              , B. PRICE
+              , B. RENTAL
+           FROM PRODUCT A
+           JOIN RENTAL B
+             ON A.ID = B.ID
+        ORDER BY ID
+    </select>
+
+    <select id="searchProductById" resultMap="all">
+        SELECT
+          A. ID
+        , A. MODEL
+        , A. RAM
+        , A. SSD
+        , A. BRAND
+        , A. PRODUCT_DATE
+        , B. PRICE
+        , B. RENTAL
+        FROM PRODUCT A
+        JOIN RENTAL B
+        ON A.ID = B.ID
+        WHERE ID = #{ id }
+    </select>
+
+    <insert id="productRegist" parameterType="com.ohgiraffers.practice.product.ProductDTO">
+        INSERT
+            INTO PRODUCT
+        (
+            MODEL
+        ,   RAM
+        ,   SSD
+        ,   BRAND
+        ,   PRODUCT_DATE
+        )
+        VALUES
+        (
+            #{ model }
+        ,   #{ ram }
+        ,   #{ ssd }
+        ,   #{ brand }
+        ,   #{ date }
+        )
+    </insert>
+
+    <delete id="deleteProduct" parameterType="com.ohgiraffers.practice.product.ProductDTO">
+        DELETE
+        FROM
+        PRODUCT
+        WHERE
+        ID = #{ id }
+    </delete>
+</mapper>
