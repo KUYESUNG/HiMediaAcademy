@@ -1,0 +1,6 @@
+spring:
+  servlet:
+    multipart:
+      location: /Users/kooyesung/Library/Java/Lecture/11_SpringWebMVC/01_lecture_source/chap07-file-upload-lecture-source
+      max-file-size: 10MB
+      max-request-size: 10MB
