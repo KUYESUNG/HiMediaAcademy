@@ -1,0 +1,20 @@
+.on {
+    display: flex;
+    align-items: center;
+}
+
+.top {
+    font-size: 24px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.search-box {
+}
+
+.search {
+    color: #ABABAB;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+}
