@@ -1,6 +1,9 @@
-package com.ohgiraffers.restapi.section02.responseentity;
+package com.ohgiraffers.restapi.section05.swagger;
 
-import org.apache.coyote.Response;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,17 +15,14 @@ import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Tag(name = "Spring Boot Swagger 연동 (USER)")
 @RestController
-@RequestMapping("/entity")
-public class ResponseEntityTestController {
+@RequestMapping("/swagger")
+public class SwaggerTestController {
 
-    /* ResponseEntity
-    * 결과 데이터와 Http 상태 코드를 직접 제어할 수 있는 클래스이다.
-    * HttpStatus, HttpHeaders, HttpBody를 포함한다.
-    * */
     private List<UserDTO> users;
 
-    public ResponseEntityTestController() {
+    public SwaggerTestController() {
         users = new ArrayList<>();
 
         users.add(new UserDTO(1, "user01", "pass01", "코알라", new Date()));
@@ -31,6 +31,7 @@ public class ResponseEntityTestController {
     }
 
     /* 회원 전체 조회 */
+    @Operation(summary = "전체 회원 조회", description = "전체 회원 목록을 조회한다.")
     @GetMapping("/users")
     public ResponseEntity<ResponserMessage> findAllUsers() {
 
@@ -49,6 +50,7 @@ public class ResponseEntityTestController {
     }
 
     /* 회원 상세 조회 */
+    @Operation(summary = "회원번호로 회원 조회", description = "회원번호를 통해 해당하는 회원 정보를 조회한다.")
     @GetMapping("/users/{userNo}")
     public ResponseEntity<ResponserMessage> findUserByNo(@PathVariable int userNo) {
 
@@ -69,6 +71,7 @@ public class ResponseEntityTestController {
     }
 
     /* 회원 추가 */
+    @Operation(summary = "신규 회원 등록")
     @PostMapping("/users")
     public ResponseEntity<?> registUser(@RequestBody UserDTO newUser) {
 
@@ -84,6 +87,7 @@ public class ResponseEntityTestController {
     }
 
     /* 회원 수정 */
+    @Operation(summary = "회원 정보 수정")
     @PutMapping("/users/{userNo}")
     public ResponseEntity<?> modifyUser(@PathVariable int userNo, @RequestBody UserDTO modifyInfo) {
 
@@ -100,6 +104,11 @@ public class ResponseEntityTestController {
     }
 
     /* 회원 삭제 */
+    @Operation(summary = "회원 정보 삭제")
+    @ApiResponses({
+            @ApiResponse(responseCode = "204", description = "회원정보 삭제 성공"),
+            @ApiResponse(responseCode = "400", description = "잘못 입력된 파라미터")
+    })
     @DeleteMapping("/users/{userNo}")
     public ResponseEntity<?> deleteUser(@PathVariable int userNo) {
 
