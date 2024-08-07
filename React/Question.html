@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        #header{
+            background:black;
+            color: white;
+            text-align: center;
+        }
+        #footer{
+            background: black;
+            color: white;
+            text-align: center;
+        }
+        #ret{
+            color: black;
+            text-align: center;
+            padding-bottom: 3%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>
+            오늘의 할일!
+            <script>
+                date = new Date().toLocaleDateString();
+                document.write(date);
+            </script>
+        </h1>
+    </div>
+
+    <div id="ret">ToDo-List</div>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const {useState} = React;
+
+        function App() {
+
+            const [todos, setTods] = useState([
+                {
+                    id: 1,
+                    text: '할일 목록을 추가할 것',
+                    checked: true
+                }
+            ]);
+            
+            const [inputText, setInputText] = useState('');
+            
+            const [nextId, setNextId] = useState(4);
+            
+            const onChangeHandler = e => setInputText(e.target.value);
+            
+            const onClickHandler = () => {
+                
+                const changedToDo = todos.concat({
+                    id: nextId,
+                    text: inputText
+                });
+                
+                setNextId(nextId + 1);
+                setTods(changedToDo);
+                setInputText('');
+            }
+            
+            const onRemove = id => {
+                
+                const changedToDo = todos.filter(todo => todo.id !== id);
+                
+                setTods(changedToDo);
+            }
+            
+            const toDoList = todos.map(todo => <li key={todo.id}
+            onClickHandler={
+                () => onRemove(todo.id)}
+                >
+                <input type="checkbox" id='todos' checked/>
+                {todo.text}
+                </li>
+                );
+                
+                return(
+                    <>
+                    <ul>{toDoList}</ul>
+                    <input value={inputText} onChange={onChangeHandler}/>
+                    <button onClick={onClickHandler}>추가하기</button>
+                    </>
+                    );
+                }
+                
+                ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+    </script>
+
+    <footer id="footer">Copyright 2024. yesung all right reserved.</footer>
+</body>
+</html>

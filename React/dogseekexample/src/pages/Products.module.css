@@ -1,0 +1,122 @@
+.header {
+    width: 1180px;
+    height: 44px;
+    background-color: #005600;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerLeft {
+    display: flex;
+    color: white;
+    font-size: 14px;
+    padding-left: 33px;
+    font-weight: 400;
+}
+
+.pText {
+    padding-left: 22px;
+}
+
+.headerCenter {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.headerRight {
+    display: flex;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.pText2 {
+    padding-left: 26px;
+    padding-right: 32px;
+}
+
+.mainBox {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curationText {
+    font-size: 36px;
+    font-weight: bold;
+    color: #005600;
+}
+
+.progressBar {
+    width: 957px;
+    height: 20px;
+    background-color: #005600;
+    opacity: 10%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.contentBox {
+    display: flex;
+    width: 636px;
+    height: 400px;
+}
+
+
+.textBox {
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+    width: 83px;
+    margin-top: 46px;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    height: 43px;
+}
+
+.hr {
+    width: 400px;
+    height: 0;
+    background-color: #D4D4D4;
+    margin: 0;
+    transform: rotate(90deg);
+    transform-origin: left;
+    margin-top: 30px;
+    margin-left: 53px;
+    margin-right: -300px;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    gap: 71px;
+    margin-top: 42px;
+}
+
+.inputSize {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #D4D4D4;
+    padding: 0;
+    padding-left: 5px;
+}
+
+.nextButton {
+    width: 216px;
+    height: 56px;
+    border-radius: 10px;
+    border: 1px solid #D4D4D4;
+    background-color: white;
+    color: #999999;
+    margin-top: 69px;
+}
