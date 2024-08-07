@@ -1,0 +1,23 @@
+.on {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 1530px;
+    height: 108px;
+}
+
+.top {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-box {
+    margin-left: 859px;
+}
+
+.search {
+    color: #ABABAB;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+}

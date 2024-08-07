@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:include="common/header.html"></div>
+    <h3>선택 메뉴 조회</h3>
+    <form action="/menu/select" method="post">
+        <label>메뉴 번호 : </label><input type="text" name="select">
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+### 회원 전체 조회
+GET http://localhost:8080/swagger/users
+
+### 회원 상세 조회
+GET http://localhost:8080/swagger/users/4
+
+### 신규 회원 등록
+POST http://localhost:8080/swagger/users
+Content-Type: application/json
+
+{
+  "id": "test",
+  "pwd": "test",
+  "name": "룽룽",
+  "enrollDate": "2024-05-24"
+}
